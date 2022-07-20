@@ -1,0 +1,44 @@
+.Logo2bad-login {
+  margin: auto;
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  margin-top: 20%;
+}
+
+/*-----------VERSION PC-------------------*/
+  
+  @media screen and (min-width: 700px) {
+    body {
+      background: rgb(255, 255, 255);
+    }
+    .Login {
+      padding: 10px 0;
+      color: rgb(255, 255, 255);
+      text-align: left;
+    }
+  
+    .Logo2bad-login {
+      margin: auto;
+      display: flex;
+      width: 25%;
+      justify-content: center;
+      margin-top: 10%;
+    }
+  
+    .Login form {
+      margin: auto;
+      max-width: 280px;
+      color: #000;
+    }
+  
+    .btn-primary.disabled,
+    .btn-primary:disabled {
+      color: rgb(255, 255, 255);
+      background-color: #e60012;
+      border-color: #000000;
+    }
+
+     
+    }
+  
