@@ -2,7 +2,7 @@ import "./GamerScore.css";
 
 function GamerScore() {
   return (
-    <div>
+    <div className="inGame">
       <p>Michelle : 4600 points</p>
       <p>Roger : 143 points</p>
     </div>

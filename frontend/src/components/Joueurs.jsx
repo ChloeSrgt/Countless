@@ -1,5 +1,13 @@
 import "./Joueurs.css";
+import React, { useContext } from "react";
+import MatchContext from "../contexts/MatchContext";
 
 export default function Joueurs() {
-  return <p className="Joueur">C'est à .......de jouer ! </p>;
+  const { players } = useContext(MatchContext);
+  return (
+    <p className="Joueur">
+      C'est à {players.map((player) => player.nickname)}
+      de jouer !{" "}
+    </p>
+  );
 }
