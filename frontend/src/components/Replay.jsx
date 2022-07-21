@@ -1,8 +1,15 @@
 import Button from "react-bootstrap/Button";
 import React from "react";
 import "./Replay.css";
+import { useNavigate } from "react-router";
 
 export default function Replay() {
+  const navigate = useNavigate();
+
+  const goToHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className="Rejouer">
       <Button
@@ -14,6 +21,7 @@ export default function Replay() {
           width: "130px",
           color: "white",
         }}
+        onClick={goToHome}
       >
         Rejouez
       </Button>

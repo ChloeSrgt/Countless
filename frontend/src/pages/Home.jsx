@@ -10,18 +10,26 @@ import MatchContext from "../contexts/MatchContext";
 function Home() {
   const navigate = useNavigate();
 
-  const { game, setGame, gameScore, setGameScore, players, setPlayers } =
-    useContext(MatchContext);
+  const {
+    game,
+    setGame,
+    gameScore,
+    setGameScore,
+    players,
+    setPlayers,
+    setTimeur,
+  } = useContext(MatchContext);
 
   const setPlayer = (name, index) => {
     const newPlayers = players;
     newPlayers[index].nickname = name;
+    newPlayers[index].score = 0;
     setPlayers(newPlayers);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setPlayers(players.concat(""));
+    setPlayers(players.concat({}));
   };
   const startGame = () => {
     axios
@@ -43,6 +51,7 @@ function Home() {
   return (
     <div>
       <Header />
+      <p className="intro">Nous comptons vos points pour vous</p>
       <Form
         style={{
           display: "flex",
@@ -51,18 +60,25 @@ function Home() {
           alignItems: "center",
         }}
       >
-        <Form.Group size="lg" controlId="shop">
+        <Form.Group size="lg" controlId="Nom">
           <br />
           <Form.Control
             placeholder="Nom du jeu"
             onBlur={(e) => setGame(e.target.value)}
           />
         </Form.Group>
-        <Form.Group size="lg" controlId="password">
+        <Form.Group size="lg" controlId="Points">
           <br />
           <Form.Control
             placeholder="Nombre de points"
-            onBlur={(e) => setGameScore(e.target.value)}
+            onBlur={(e) => setGameScore(parseInt(e.target.value, 10))}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="password">
+          <br />
+          <Form.Control
+            placeholder="Temps maximum (sec)"
+            onBlur={(e) => setTimeur(parseInt(e.target.value, 10))}
           />
         </Form.Group>
       </Form>
@@ -88,18 +104,22 @@ function Home() {
           </Form.Group>
         ))}
         <br />
-        <Button
-          type="submit"
-          size="lg "
-          style={{
-            backgroundColor: "#3D3D3D",
-            border: "none",
-            width: "190px",
-            color: "white",
-          }}
-        >
-          Ajouter un joueur
-        </Button>
+        <div className="add">
+          <Button
+            type="submit"
+            size="lg "
+            style={{
+              backgroundColor: "#3D3D3D",
+              border: "none",
+              width: "140px",
+              color: "white",
+              fontSize: "15px",
+              borderRadius: "border-radius: 25% 10%",
+            }}
+          >
+            Ajouter un joueur
+          </Button>
+        </div>
       </Form>
       <br />
       <div className="FormButton">
@@ -108,8 +128,10 @@ function Home() {
           style={{
             backgroundColor: "#3D3D3D",
             border: "none",
-            width: "150px",
+            width: "130px",
             color: "white",
+            fontSize: "15px",
+            borderRadius: "border-radius: 25% 10%",
           }}
           onClick={startGame}
         >
