@@ -1,3 +1,11 @@
+import GamerScore from "@components/GamerScore";
+import Next from "@components/Next";
+
 export default function Congrat() {
-  return <p>Hello Vite + React !</p>;
+  return (
+    <div>
+      <GamerScore />
+      <Next />
+    </div>
+  );
 }

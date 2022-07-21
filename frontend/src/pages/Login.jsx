@@ -58,13 +58,14 @@ export default function Login() {
           </Form.Group>
           <br />
           <Button
+            className="Button"
             size="lg "
             type="submit"
             disabled={!validateForm()}
             style={{
               backgroundColor: "#3D3D3D",
               border: "none",
-              width: "207px",
+              width: "150px",
               color: "white",
             }}
           >

@@ -1,16 +1,16 @@
 import Button from "react-bootstrap/Button";
-import "./Next.css";
+import React from "react";
 
-export default function Next() {
+export default function Replay() {
   return (
-    <div className="Suivant">
+    <div className="Rejouez">
       <Button
         size="lg "
         type="submit"
         style={{
           backgroundColor: "#3D3D3D",
           border: "none",
-          width: "150px",
+          width: "207px",
           color: "white",
         }}
       >

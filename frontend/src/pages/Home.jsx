@@ -88,7 +88,7 @@ function Home() {
           style={{
             backgroundColor: "#3D3D3D",
             border: "none",
-            width: "207px",
+            width: "190px",
             color: "white",
           }}
         >
@@ -96,18 +96,20 @@ function Home() {
         </Button>
       </Form>
       <br />
-      <Button
-        size="lg "
-        style={{
-          backgroundColor: "#3D3D3D",
-          border: "none",
-          width: "207px",
-          color: "white",
-        }}
-        onClick={(startGame, handleClick)}
-      >
-        Commencer
-      </Button>
+      <div className="FormButton">
+        <Button
+          size="lg "
+          style={{
+            backgroundColor: "#3D3D3D",
+            border: "none",
+            width: "150px",
+            color: "white",
+          }}
+          onClick={(startGame, handleClick)}
+        >
+          Commencer
+        </Button>
+      </div>
     </div>
   );
 }

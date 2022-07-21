@@ -15,7 +15,7 @@ function App() {
   const [gameScore, setGameScore] = useState();
   const [round, setRound] = useState(0);
   const [players, setPlayers] = useState([
-    { id: `1`, nickname: `Tibou`, score: 0 },
+    { id: `1`, nickname: `Alex`, score: 0 },
     { id: `2`, nickname: `clover`, score: 100 },
   ]);
 
