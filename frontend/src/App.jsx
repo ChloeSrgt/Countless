@@ -7,16 +7,17 @@ import Playing from "@pages/Playing";
 import LoginContext from "./contexts/LoginContext";
 import "./App.css";
 import MatchContext from "./contexts/MatchContext";
+// import StopWatch from "./Components/StopWatch/StopWatch.js";
 
 function App() {
-  const [isConnected, setIsConnected] = useState(false);
+  const [isConnected, setIsConnected] = useState(true);
   const [login, setLogin] = useState([]);
   const [game, setGame] = useState("");
-  const [gameScore, setGameScore] = useState();
+  const [gameScore, setGameScore] = useState(0);
   const [round, setRound] = useState(0);
   const [players, setPlayers] = useState([
-    { id: `1`, nickname: `Alex`, score: 0 },
-    { id: `2`, nickname: `clover`, score: 100 },
+    { id: `1`, nickname: `Alex`, score: 0 }, // ligne 1
+    { id: `2`, nickname: `clover`, score: 0 }, // ligne 2
   ]);
 
   return (
@@ -39,7 +40,7 @@ function App() {
               players,
               setPlayers,
             }),
-            [game, round, players]
+            [game, gameScore, round, players]
           )}
         >
           {isConnected ? (

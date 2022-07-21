@@ -3,7 +3,7 @@ const models = require("../models");
 class MatchController {
   static create = (req, res) => {
     models.match
-      .insert({ game: req.body.gameName })
+      .insert({ game: req.body.game })
       .then(([rows]) => {
         // res.send(rows);
         return Promise.all(

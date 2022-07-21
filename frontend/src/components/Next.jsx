@@ -10,11 +10,11 @@ export default function Next() {
         style={{
           backgroundColor: "#3D3D3D",
           border: "none",
-          width: "150px",
+          width: "100px",
           color: "white",
         }}
       >
-        Rejouez
+        Next
       </Button>
     </div>
   );

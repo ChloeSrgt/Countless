@@ -9,11 +9,15 @@ import MatchContext from "../contexts/MatchContext";
 
 function Home() {
   const navigate = useNavigate();
-  function handleClick() {
-    navigate("/Playing");
-  }
+
   const { game, setGame, gameScore, setGameScore, players, setPlayers } =
     useContext(MatchContext);
+
+  const setPlayer = (name, index) => {
+    const newPlayers = players;
+    newPlayers[index].nickname = name;
+    setPlayers(newPlayers);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,6 +36,8 @@ function Home() {
       .catch((error) => {
         console.error(error);
       });
+
+    navigate("/Playing");
   };
 
   return (
@@ -48,7 +54,6 @@ function Home() {
         <Form.Group size="lg" controlId="shop">
           <br />
           <Form.Control
-            autoFocus
             placeholder="Nom du jeu"
             onBlur={(e) => setGame(e.target.value)}
           />
@@ -78,6 +83,7 @@ function Home() {
               autoFocus
               name="pseudo"
               placeholder={`Joueur ${index + 1}`}
+              onBlur={(e) => setPlayer(e.target.value, index)}
             />
           </Form.Group>
         ))}
@@ -105,7 +111,7 @@ function Home() {
             width: "150px",
             color: "white",
           }}
-          onClick={(startGame, handleClick)}
+          onClick={startGame}
         >
           Commencer
         </Button>

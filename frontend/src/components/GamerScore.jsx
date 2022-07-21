@@ -1,10 +1,16 @@
 import "./GamerScore.css";
+import React, { useContext } from "react";
+import MatchContext from "../contexts/MatchContext";
 
 function GamerScore() {
+  const { players } = useContext(MatchContext);
   return (
     <div className="inGame">
-      <p>Michelle : 4600 points</p>
-      <p>Roger : 143 points</p>
+      {players.map((player) => (
+        <p>
+          {player.nickname} : {player.score}
+        </p>
+      ))}
     </div>
   );
 }
