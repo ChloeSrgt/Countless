@@ -14,7 +14,10 @@ function App() {
   const [game, setGame] = useState("");
   const [gameScore, setGameScore] = useState();
   const [round, setRound] = useState(0);
-  const [players, setPlayers] = useState([""]);
+  const [players, setPlayers] = useState([
+    { id: `1`, nickname: `Tibou`, score: 0 },
+    { id: `2`, nickname: `clover`, score: 100 },
+  ]);
 
   return (
     <div className="App">
