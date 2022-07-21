@@ -2,23 +2,42 @@ import "./Home.css";
 import Header from "@components/Header";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+import { useContext } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router";
+import MatchContext from "../contexts/MatchContext";
 
 function Home() {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate("/Playing");
+  }
+  const { game, setGame, gameScore, setGameScore, players, setPlayers } =
+    useContext(MatchContext);
 
-  const [players, setPlayers] = useState([""]);
-
-  const handleSubmit = (event) => {};
-  const addPlayer = () => {
-    // players.push("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
     setPlayers(players.concat(""));
+  };
+  const startGame = () => {
+    axios
+      .post(`${import.meta.env.VITE_BACKEND_URL}/match`, {
+        players,
+        game,
+        gameScore,
+      })
+      .then((res) => {
+        console.warn(res);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
     <div>
       <Header />
       <Form
-        onSubmit={handleSubmit}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -31,28 +50,40 @@ function Home() {
           <Form.Control
             autoFocus
             placeholder="Nom du jeu"
-            onChange={(e) => setLogin(e.target.value)}
+            onBlur={(e) => setGame(e.target.value)}
           />
         </Form.Group>
         <Form.Group size="lg" controlId="password">
           <br />
           <Form.Control
             placeholder="Nombre de points"
-            onChange={(e) => setPassword(e.target.value)}
+            onBlur={(e) => setGameScore(e.target.value)}
           />
         </Form.Group>
+      </Form>
+
+      <Form
+        onSubmit={handleSubmit}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "column",
+          alignItems: "center",
+        }}
+      >
         {players.map((player, index) => (
           <Form.Group size="lg" controlId="shop">
             <br />
             <Form.Control
               autoFocus
-              placeholder={"Joueur " + (index + 1)}
-              onChange={(e) => setLogin(e.target.value)}
+              name="pseudo"
+              placeholder={`Joueur ${index + 1}`}
             />
           </Form.Group>
         ))}
         <br />
         <Button
+          type="submit"
           size="lg "
           style={{
             backgroundColor: "#3D3D3D",
@@ -60,24 +91,23 @@ function Home() {
             width: "207px",
             color: "white",
           }}
-          onClick={addPlayer}
         >
           Ajouter un joueur
         </Button>
-        <br />
-        <Button
-          size="lg "
-          type="submit"
-          style={{
-            backgroundColor: "#3D3D3D",
-            border: "none",
-            width: "207px",
-            color: "white",
-          }}
-        >
-          Commencer
-        </Button>
       </Form>
+      <br />
+      <Button
+        size="lg "
+        style={{
+          backgroundColor: "#3D3D3D",
+          border: "none",
+          width: "207px",
+          color: "white",
+        }}
+        onClick={(startGame, handleClick)}
+      >
+        Commencer
+      </Button>
     </div>
   );
 }

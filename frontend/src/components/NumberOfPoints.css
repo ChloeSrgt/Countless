@@ -1,0 +1,11 @@
+.points {
+  padding: 10px 0;
+  color: rgb(255, 255, 255);
+  text-align: left;
+}
+
+.points form {
+  margin: auto;
+  max-width: 280px;
+  color: #000;
+}

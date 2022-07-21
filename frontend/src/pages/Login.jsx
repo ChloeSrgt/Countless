@@ -9,27 +9,12 @@ import logo from "../assets/logo.png";
 export default function Login() {
   const { login, setLogin } = useContext(LoginContext);
   const [password, setPassword] = useState("");
-  const { isConnected, setIsConnected } = useContext(LoginContext);
+  const { setIsConnected } = useContext(LoginContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (login && password) {
-      /* axios
-        .post(`${import.meta.env.VITE_BACKEND_URL}/shops/login`, {
-          login,
-          password,
-        })
-        .then(() => {
-          setIsConnected(true);
-        })
-        .catch(() => {
-          swal(
-            "Merci d'indiquer votre identifiant et mot de passe.",
-            "",
-            "error"
-          );
-        }); */
       setIsConnected(true);
     }
   };
@@ -40,7 +25,7 @@ export default function Login() {
   return (
     <>
       <div className="Logo">
-        <img className="Logo2bad-login" src={logo} alt="logo" />
+        <img className="LogoCountLess" src={logo} alt="logo" />
       </div>
       <div className="Login">
         <Form
