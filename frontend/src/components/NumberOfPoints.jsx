@@ -55,7 +55,6 @@ export default function NumberOfPoints() {
             width: "100px",
             color: "white",
             marginTop: "20px",
-            borderRadius: "border-radius: 25% 10%",
           }}
         >
           Suivant

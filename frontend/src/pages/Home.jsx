@@ -114,7 +114,6 @@ function Home() {
               width: "140px",
               color: "white",
               fontSize: "15px",
-              borderRadius: "border-radius: 25% 10%",
             }}
           >
             Ajouter un joueur
@@ -131,7 +130,6 @@ function Home() {
             width: "130px",
             color: "white",
             fontSize: "15px",
-            borderRadius: "border-radius: 25% 10%",
           }}
           onClick={startGame}
         >

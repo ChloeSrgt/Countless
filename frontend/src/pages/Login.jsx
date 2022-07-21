@@ -65,8 +65,9 @@ export default function Login() {
             style={{
               backgroundColor: "#3D3D3D",
               border: "none",
-              width: "150px",
+              width: "140px",
               color: "white",
+              fontSize: "15px",
             }}
           >
             Se connecter

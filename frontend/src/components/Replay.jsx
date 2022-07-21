@@ -21,7 +21,6 @@ export default function Replay() {
           width: "130px",
           color: "white",
           marginTop: "20px",
-          borderRadius: "border-radius: 25% 10%",
         }}
         onClick={goToHome}
       >
