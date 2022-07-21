@@ -20,10 +20,12 @@ export default function Replay() {
           border: "none",
           width: "130px",
           color: "white",
+          marginTop: "20px",
+          borderRadius: "border-radius: 25% 10%",
         }}
         onClick={goToHome}
       >
-        Rejouez
+        Rejouez?
       </Button>
     </div>
   );

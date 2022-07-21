@@ -11,7 +11,7 @@ import MatchContext from "./contexts/MatchContext";
 // import StopWatch from "./Components/StopWatch/StopWatch.js";
 
 function App() {
-  const [isConnected, setIsConnected] = useState(true);
+  const [isConnected, setIsConnected] = useState(false);
   const [login, setLogin] = useState([]);
   const [game, setGame] = useState("");
   const [gameScore, setGameScore] = useState(0);
