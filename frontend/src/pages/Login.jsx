@@ -63,7 +63,7 @@ export default function Login() {
             type="submit"
             disabled={!validateForm()}
             style={{
-              backgroundColor: "#3D3D3D",
+              background: "linear-gradient(#32373c, #a1a3a2)",
               border: "none",
               width: "140px",
               color: "white",

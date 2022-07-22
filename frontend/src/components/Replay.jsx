@@ -16,7 +16,7 @@ export default function Replay() {
         size="lg "
         type="submit"
         style={{
-          backgroundColor: "#3D3D3D",
+          background: "linear-gradient(#32373c, #a1a3a2)",
           border: "none",
           width: "130px",
           color: "white",
@@ -24,7 +24,7 @@ export default function Replay() {
         }}
         onClick={goToHome}
       >
-        Rejouez?
+        Rejouer ?
       </Button>
     </div>
   );

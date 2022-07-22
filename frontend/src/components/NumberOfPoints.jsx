@@ -38,7 +38,7 @@ export default function NumberOfPoints() {
         }}
       >
         <Form.Group size="lg" controlId="points">
-          <Form.Label>Nombre de point:</Form.Label>
+          <Form.Label>Nombre de points:</Form.Label>
           <Form.Control
             autofocus
             type="number"
@@ -50,7 +50,7 @@ export default function NumberOfPoints() {
           type="submit"
           size="lg "
           style={{
-            backgroundColor: "#3D3D3D",
+            background: "linear-gradient(#32373c, #a1a3a2)",
             border: "none",
             width: "100px",
             color: "white",

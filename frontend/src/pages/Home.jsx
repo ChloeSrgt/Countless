@@ -109,11 +109,11 @@ function Home() {
             type="submit"
             size="lg "
             style={{
-              backgroundColor: "#3D3D3D",
+              background: "linear-gradient(#32373c, #a1a3a2)",
               border: "none",
               width: "140px",
               color: "white",
-              fontSize: "15px",
+              fontSize: "13px",
             }}
           >
             Ajouter un joueur
@@ -125,7 +125,7 @@ function Home() {
         <Button
           size="lg "
           style={{
-            backgroundColor: "#3D3D3D",
+            background: "linear-gradient(#a1a3a2, #32373c )",
             border: "none",
             width: "130px",
             color: "white",

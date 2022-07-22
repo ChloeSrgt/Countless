@@ -6,7 +6,7 @@ class PlayerManager extends AbstractManager {
   insert(player, matchId) {
     return this.connection.query(
       `insert into \`${PlayerManager.table}\`(score, nickname, match_id) values (0,?,?)`,
-      [player, matchId]
+      [player.nickname, matchId]
     );
   }
 
